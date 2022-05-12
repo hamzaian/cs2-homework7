@@ -69,7 +69,35 @@ vector<string> tokenize(string input){
     }
 
 };
-map<string, set<unsigned>> createMap(ifstream&){
+map<string, set<unsigned>> createMap(ifstream& file){
+    map<string, set<unsigned>> output;
+    map<string, set<unsigned>>::iterator it;
+    string line;
+    vector<string> tokens;
+    int line_num = 1;
+    while(getline(file, line)){
+        tokens = tokenize(line);
+        for(string word : tokens){
+            it = output.find(word);
+            if(it!= output.end()){
+                it->second.insert(line_num);
+            }
+            else{
+                output.insert(pair<string, set<unsigned>>(word, set<unsigned>()));
+                it = output.find(word);
+                if(it!= output.end()){
+                    it->second.insert(line_num);
+                }
+                else{
+                    cout << "error adding key\n";
+                }
+                // pair.second.insert(line_num);
+            }
+        }
+
+        line_num++;
+    }
+
     //create ordered map??
     //use getline
     //call tokenize
