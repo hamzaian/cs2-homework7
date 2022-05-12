@@ -51,3 +51,10 @@ int main() {
     // terminate
     return 0;
 }
+
+vector<string> tokenize(string){
+    
+};
+map<string, set<unsigned>> createMap(ifstream&){
+
+};
