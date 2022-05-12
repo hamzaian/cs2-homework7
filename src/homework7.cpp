@@ -52,8 +52,16 @@ int main() {
     return 0;
 }
 
-vector<string> tokenize(string){
-    
+vector<string> tokenize(string input){
+    vector<string> tokens;
+    char space = ' ';
+    int break_pos = -1;
+    for(int i=0; i<input.size(); i++){
+        if (input[i] == space){
+            tokens.push_back(input.substr(0,i))
+        }
+    }
+
 };
 map<string, set<unsigned>> createMap(ifstream&){
 
