@@ -55,14 +55,23 @@ int main() {
 vector<string> tokenize(string input){
     vector<string> tokens;
     char space = ' ';
-    int break_pos = -1;
-    for(int i=0; i<input.size(); i++){
-        if (input[i] == space){
-            tokens.push_back(input.substr(0,i))
-        }
+    // for(int i=0; i<string::npos; i++){
+    //     if (input[i] == space){
+    //         tokens.push_back(input.substr(0,i));  //or maybe it should end at i-1 since you don't wanna include spaces
+    //         input.erase(0,i);
+    //     }
+    // }
+    int i = 0;
+    while(i!=string::npos){
+        i = input.find(space);  //maybe convert space back to  " " quotes
+        tokens.push_back(input.substr(0,i));  //or maybe it should end at i-1 since you don't wanna include spaces
+        input.erase(0,i);
     }
 
 };
 map<string, set<unsigned>> createMap(ifstream&){
-
+    //create ordered map??
+    //use getline
+    //call tokenize
+    //update appropriate value(set of line #s), for the appropriate string key
 };
