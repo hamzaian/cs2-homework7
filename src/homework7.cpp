@@ -47,11 +47,11 @@ int main() {
     inputFile.close();
 
     // TODO: iterate over the map to display the pairs
-    map<string, set<unsigned>>::iterator it_print = result.begin();
-    for(it_print; it_print != result.end(); it_print++){
-        cout << "printing key" << it_print->first << " ";//<< " " << it->second <<
-        set<unsigned>::iterator it_set = it_print->second.begin();
-        for(it_set; it_set != it_print->second.end(); it_set++){
+    map<string, set<unsigned>>::iterator it_map = result.begin();
+    for(it_map; it_map != result.end(); it_map++){
+        cout << "printing key :  " << it_map->first << " ";//<< " " << it->second <<
+        set<unsigned>::iterator it_set;
+        for(it_set = it_map->second.begin(); it_set != it_map->second.end(); it_set++){
             cout << *it_set << " ";
         };
         cout << endl;
